@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208 256" role="img" aria-label="Photo placeholder">
+  <rect width="208" height="256" fill="#e1eee8"/>
+  <circle cx="104" cy="100" r="44" fill="#0f5c4a" opacity="0.85"/>
+  <path d="M24 256c4-52 40-86 80-86s76 34 80 86Z" fill="#0f5c4a" opacity="0.85"/>
+  <text x="104" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#ffffff">PE</text>
+</svg>

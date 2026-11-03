@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Academic Planner | Prince Caleb Effiom</title>
+  <meta name="description" content="An academic planner to add, complete and delete coursework tasks.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
+  <script src="js/planner.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="container nav-bar" aria-label="Main">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">PE</span>
+        <span>Prince Effiom</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html" aria-current="page">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <header class="page-head">
+      <h1>Academic planner</h1>
+      <p>Keep track of assignments, labs and exams. Your tasks are saved in this browser, so they'll still be here next time.</p>
+    </header>
+
+    <div class="section planner-layout">
+      <aside class="panel" aria-labelledby="add-title">
+        <div class="progress" aria-live="polite">
+          <svg viewBox="0 0 80 80" aria-hidden="true">
+            <circle class="track" cx="40" cy="40" r="34"/>
+            <circle class="value" id="progress-ring" cx="40" cy="40" r="34" stroke-dasharray="213.6" stroke-dashoffset="213.6"/>
+          </svg>
+          <div>
+            <strong id="progress-percent">0%</strong>
+            <span id="progress-text">No tasks yet</span>
+          </div>
+        </div>
+
+        <h2 id="add-title">Add a task</h2>
+        <form id="task-form" novalidate>
+          <div class="field">
+            <label for="task-title">Task</label>
+            <input type="text" id="task-title" name="title" placeholder="e.g. Finish COS 106 term project" maxlength="120" autocomplete="off">
+            <span class="error-text" id="task-title-error" aria-live="polite"></span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="task-course">Course</label>
+              <select id="task-course" name="course">
+                <option value="COS 106">COS 106</option>
+                <option value="COS 102">COS 102</option>
+                <option value="CSC 106">CSC 106</option>
+                <option value="General">General</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="task-priority">Priority</label>
+              <select id="task-priority" name="priority">
+                <option value="high">High</option>
+                <option value="medium" selected>Medium</option>
+                <option value="low">Low</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="task-due">Due date</label>
+            <input type="date" id="task-due" name="due">
+            <span class="hint">Optional</span>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            Add task
+          </button>
+        </form>
+      </aside>
+
+      <section class="panel" aria-labelledby="list-title">
+        <div class="toolbar">
+          <h2 id="list-title">My tasks</h2>
+          <div class="filters" role="group" aria-label="Show tasks">
+            <button type="button" data-filter="all" aria-pressed="true">All<b id="count-all">0</b></button>
+            <button type="button" data-filter="active" aria-pressed="false">To do<b id="count-active">0</b></button>
+            <button type="button" data-filter="done" aria-pressed="false">Done<b id="count-done">0</b></button>
+          </div>
+        </div>
+
+        <ul class="task-list" id="task-list" aria-live="polite"></ul>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <strong id="empty-title">No tasks yet</strong>
+          <span id="empty-text">Add your first task using the form.</span>
+        </div>
+
+        <div class="planner-footer">
+          <span>Sorted by due date</span>
+          <button class="link-btn" type="button" id="clear-done" disabled>Clear completed tasks</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>&copy; <span id="year">2026</span> Prince Caleb Effiom. COS 106 term project.</p>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
