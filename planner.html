@@ -65,17 +65,26 @@
         <form id="task-form" novalidate>
           <div class="field">
             <label for="task-title">Task</label>
-            <input type="text" id="task-title" name="title" placeholder="e.g. Finish COS 106 term project" maxlength="120" autocomplete="off">
+            <input type="text" id="task-title" name="title" placeholder="e.g. Read PHY 102 week 3 notes" maxlength="120" autocomplete="off">
             <span class="error-text" id="task-title-error" aria-live="polite"></span>
           </div>
           <div class="field-row">
             <div class="field">
               <label for="task-course">Course</label>
               <select id="task-course" name="course">
-                <option value="COS 106">COS 106</option>
-                <option value="COS 102">COS 102</option>
-                <option value="CSC 106">CSC 106</option>
-                <option value="General">General</option>
+                <optgroup label="School of Computing">
+                  <option value="CSC 106">CSC 106 - Intro to Web Technologies</option>
+                  <option value="COS 102">COS 102 - Problem Solving</option>
+                  <option value="COS 111">COS 111 - Technical Certification in Computing I</option>
+                  <option value="MTH 102">MTH 102 - Elementary Mathematics II</option>
+                  <option value="PHY 102">PHY 102 - General Physics II</option>
+                  <option value="PHY 108">PHY 108 - General Physics Practical II</option>
+                </optgroup>
+                <optgroup label="General Studies">
+                  <option value="GST 112">GST 112 - Nigerian Peoples and Culture</option>
+                  <option value="GST 122">GST 122 - Communication Skills in English II</option>
+                </optgroup>
+                <option value="Other">Other</option>
               </select>
             </div>
             <div class="field">

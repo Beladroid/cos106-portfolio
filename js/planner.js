@@ -13,9 +13,10 @@ const clearBtn = document.getElementById("clear-done");
 
 // a few tasks to start with so the page isn't empty the first time
 const exampleTasks = [
-  { id: 1, title: "Finish COS 106 term project", course: "COS 106", priority: "high", due: "2026-11-15", done: false },
+  { id: 1, title: "Submit web technologies term project", course: "CSC 106", priority: "high", due: "2026-11-15", done: false },
   { id: 2, title: "Revise C loops and arrays", course: "COS 102", priority: "medium", due: "2026-11-20", done: false },
-  { id: 3, title: "Read notes on the DOM", course: "COS 106", priority: "low", due: "", done: true }
+  { id: 3, title: "Start Elementary Mathematics II lessons", course: "MTH 102", priority: "medium", due: "", done: false },
+  { id: 4, title: "Read notes on the DOM", course: "CSC 106", priority: "low", due: "", done: true }
 ];
 
 function loadTasks() {
