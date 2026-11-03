@@ -353,10 +353,10 @@ main { flex: 1; }
 :root[data-theme="dark"] .id-head { background: #1d4a3d; color: #e6ece8; }
 .id-head strong { font-family: "Schibsted Grotesk", sans-serif; font-size: 0.98rem; line-height: 1.2; }
 .id-head span { font-size: 0.78rem; opacity: 0.85; white-space: nowrap; }
-.id-body { padding: 20px; display: grid; grid-template-columns: 104px 1fr; gap: 16px; align-items: start; }
+.id-body { padding: 20px; display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: start; }
 .id-body img {
-  width: 104px;
-  height: 128px;
+  width: 120px;
+  height: 150px;
   object-fit: cover;
   border-radius: 10px;
   background: var(--bg-sunk);
