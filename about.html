@@ -8,7 +8,7 @@
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js"></script>
 </head>
@@ -16,10 +16,10 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <nav class="container nav-bar" aria-label="Main">
-      <a class="brand" href="index.html">
-        <span class="brand-mark" aria-hidden="true">PE</span>
-        <span>Prince Effiom</span>
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="index.html">
+        <span class="logo-mark" aria-hidden="true">PE</span>
+        <span class="logo-text">Prince Effiom</span>
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -29,12 +29,12 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-tools">
-        <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
-          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch between night and day mode">
           <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
         </button>
-        <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-          <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <button class="icon-btn menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+          <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
           <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
       </div>
@@ -43,57 +43,69 @@
 
   <main id="main" class="container">
     <header class="page-head">
-      <h1>About me</h1>
-      <p>Where I studied, what I can do and where I'm heading.</p>
+      <p class="label">About me</p>
+      <h1>Student, builder, always learning.</h1>
+      <p>Where I studied, where I'm heading, and the tools I use to build things.</p>
     </header>
 
-    <section class="section about-grid">
-      <article class="panel">
+    <section class="section-sm about-grid" aria-label="Education and career aspirations">
+      <article class="card reveal">
         <h2>Educational background</h2>
         <ol class="timeline">
-          <li class="current">
-            <span class="when">2026 to present</span>
-            <h3>MIVA Open University</h3>
-            <p>B.Sc. Software Engineering. Courses so far include Problem Solving (COS 102) and Introduction to Web Technologies (COS 106).</p>
+          <li class="now">
+            <span class="years">2026 &ndash; now</span>
+            <div>
+              <h3>MIVA Open University <span class="badge">Current</span></h3>
+              <p>B.Sc. Software Engineering. Courses this semester include Introduction to Web Technologies (CSC 106), Problem Solving (COS 102), Elementary Mathematics II and General Physics II.</p>
+            </div>
           </li>
-          <li class="current">
-            <span class="when">2021 to present</span>
-            <h3>University of Calabar</h3>
-            <p>Electronics and Computer Technology, where I'm learning how the hardware side of computing works.</p>
+          <li class="now">
+            <span class="years">2021 &ndash; now</span>
+            <div>
+              <h3>University of Calabar <span class="badge">Current</span></h3>
+              <p>Electronics and Computer Technology, where I'm learning how the hardware side of computing works.</p>
+            </div>
           </li>
           <li>
-            <span class="when">2015 to 2021</span>
-            <h3>Nigerian Navy Secondary School</h3>
-            <p>Secondary education, where I first got interested in computers and how things work.</p>
+            <span class="years">2015 &ndash; 2021</span>
+            <div>
+              <h3>Nigerian Navy Secondary School</h3>
+              <p>Secondary education, where I first got interested in computers and how things work.</p>
+            </div>
           </li>
           <li>
-            <span class="when">2010 to 2015</span>
-            <h3>Matilda Memorial Nursery and Primary School</h3>
-            <p>Nursery and primary education.</p>
+            <span class="years">2010 &ndash; 2015</span>
+            <div>
+              <h3>Matilda Memorial Nursery and Primary School</h3>
+              <p>Nursery and primary education.</p>
+            </div>
           </li>
         </ol>
       </article>
 
-      <article class="panel">
+      <article class="card reveal">
         <h2>Career aspirations</h2>
-        <ul class="aims">
-          <li>Finish my B.Sc. in Software Engineering at MIVA, then go on to an M.Sc. and further study, all the way to the top of my field.</li>
-          <li>Grow into a senior software engineer who can design, build and run large, reliable systems from start to finish.</li>
-          <li>Go deeper into artificial intelligence, cloud computing and system design, and where software meets hardware.</li>
-          <li>Build software through Belac Multiconcept that solves real problems for people in Nigeria and beyond.</li>
-          <li>Give back by mentoring other students and contributing to open-source projects.</li>
-        </ul>
+        <ol class="aims">
+          <li><b>Finish my B.Sc.</b> in Software Engineering at MIVA, then go on to an M.Sc. and further study, all the way to the top of my field.</li>
+          <li><b>Grow into a senior software engineer</b> who can design, build and run large, reliable systems from start to finish.</li>
+          <li><b>Go deeper</b> into artificial intelligence, cloud computing and system design, and where software meets hardware.</li>
+          <li><b>Build software through Belac Multiconcept</b> that solves real problems for people in Nigeria and beyond.</li>
+          <li><b>Give back</b> by mentoring other students and contributing to open-source projects.</li>
+        </ol>
       </article>
     </section>
 
-    <section class="section" aria-labelledby="skills-title">
-      <div class="section-title">
-        <h2 id="skills-title">Technical skills</h2>
-        <p>What I use and where I've used it</p>
+    <section class="section-sm" aria-labelledby="skills-title">
+      <div class="head-row reveal">
+        <div>
+          <p class="label">Toolbox</p>
+          <h2 id="skills-title">Technical skills</h2>
+        </div>
+        <p>What I use, how comfortable I am with it, and where I've used it.</p>
       </div>
-      <div class="table-wrap">
+      <div class="table-wrap reveal">
         <table>
-          <caption>Levels: 3 dots = confident, 2 = comfortable, 1 = learning.</caption>
+          <caption>Level: 3 bars = confident, 2 = comfortable, 1 = still learning.</caption>
           <thead>
             <tr>
               <th scope="col">Skill</th>
@@ -107,43 +119,49 @@
               <th scope="row">HTML &amp; CSS</th>
               <td>Front end</td>
               <td><span class="level" aria-label="Confident"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
-              <td class="used">This website, Spindle's landing page</td>
+              <td class="used">This website, the Fidelstine charity site</td>
             </tr>
             <tr>
               <th scope="row">JavaScript &amp; TypeScript</th>
               <td>Front end and back end</td>
               <td><span class="level" aria-label="Comfortable"><i class="on"></i><i class="on"></i><i></i></span></td>
-              <td class="used">Planner on this site, Belac Ledger, VeriNest</td>
+              <td class="used">The planner on this site, Bench, Belac Ledger</td>
             </tr>
             <tr>
               <th scope="row">React &amp; Next.js</th>
               <td>Web apps</td>
               <td><span class="level" aria-label="Comfortable"><i class="on"></i><i class="on"></i><i></i></span></td>
-              <td class="used">Belac Ledger, VeriNest, Spindle website</td>
+              <td class="used">Bench, VeriNest, Belac Ledger</td>
             </tr>
             <tr>
               <th scope="row">React Native (Expo)</th>
               <td>Mobile apps</td>
-              <td><span class="level" aria-label="Learning"><i class="on"></i><i></i><i></i></span></td>
-              <td class="used">Spindle customer, laundry and rider app</td>
+              <td><span class="level" aria-label="Still learning"><i class="on"></i><i></i><i></i></span></td>
+              <td class="used">The Spindle mobile app</td>
+            </tr>
+            <tr>
+              <th scope="row">Node.js &amp; Express</th>
+              <td>Back end</td>
+              <td><span class="level" aria-label="Comfortable"><i class="on"></i><i class="on"></i><i></i></span></td>
+              <td class="used">The Matric backend</td>
             </tr>
             <tr>
               <th scope="row">SQL &amp; PostgreSQL</th>
               <td>Databases</td>
               <td><span class="level" aria-label="Comfortable"><i class="on"></i><i class="on"></i><i></i></span></td>
-              <td class="used">Neon and Supabase databases for my projects</td>
+              <td class="used">Databases for Matric, VeriNest and the Ledger</td>
             </tr>
             <tr>
               <th scope="row">C</th>
               <td>Programming</td>
-              <td><span class="level" aria-label="Learning"><i class="on"></i><i></i><i></i></span></td>
+              <td><span class="level" aria-label="Still learning"><i class="on"></i><i></i><i></i></span></td>
               <td class="used">COS 102 lab programs</td>
             </tr>
             <tr>
               <th scope="row">Git &amp; GitHub</th>
               <td>Tools</td>
               <td><span class="level" aria-label="Comfortable"><i class="on"></i><i class="on"></i><i></i></span></td>
-              <td class="used">Version control and deploys for every project</td>
+              <td class="used">Version control and hosting for my projects</td>
             </tr>
             <tr>
               <th scope="row">UI design</th>
@@ -156,9 +174,9 @@
       </div>
     </section>
 
-    <section class="section" aria-label="Hobbies">
-      <article class="panel">
-        <h2>Hobbies and interests</h2>
+    <section class="section-sm" aria-labelledby="hobbies-title">
+      <div class="card reveal">
+        <h2 id="hobbies-title">Hobbies and interests</h2>
         <ul class="hobbies">
           <li>
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
@@ -181,19 +199,30 @@
             Music
           </li>
         </ul>
-      </article>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-row">
-      <p>&copy; <span id="year">2026</span> Prince Caleb Effiom. COS 106 term project.</p>
-      <ul class="footer-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="planner.html">Planner</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <div class="container">
+      <div class="footer-cta reveal">
+        <p class="label">Got an idea or a question?</p>
+        <h2>Let's build something good together.</h2>
+        <a class="btn btn-gold" href="contact.html">
+          Get in touch
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="footer-row">
+        <p>&copy; <span id="year">2026</span> Prince Caleb Effiom. CSC 106 term project.</p>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="planner.html">Planner</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://github.com/Beladroid" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
     </div>
   </footer>
 </body>

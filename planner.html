@@ -8,7 +8,7 @@
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js"></script>
   <script src="js/planner.js" defer></script>
@@ -17,10 +17,10 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <nav class="container nav-bar" aria-label="Main">
-      <a class="brand" href="index.html">
-        <span class="brand-mark" aria-hidden="true">PE</span>
-        <span>Prince Effiom</span>
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="index.html">
+        <span class="logo-mark" aria-hidden="true">PE</span>
+        <span class="logo-text">Prince Effiom</span>
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -30,12 +30,12 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-tools">
-        <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
-          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch between night and day mode">
           <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
         </button>
-        <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-          <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <button class="icon-btn menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+          <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
           <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
       </div>
@@ -44,12 +44,13 @@
 
   <main id="main" class="container">
     <header class="page-head">
-      <h1>Academic planner</h1>
-      <p>Keep track of assignments, labs and exams. Your tasks are saved in this browser, so they'll still be here next time.</p>
+      <p class="label">Academic planner</p>
+      <h1>Stay on top of every course.</h1>
+      <p>Add assignments, labs and exams, tick them off as you go. Your tasks are saved in this browser, so they'll still be here next time.</p>
     </header>
 
-    <div class="section planner-layout">
-      <aside class="panel" aria-labelledby="add-title">
+    <div class="planner">
+      <aside class="card" aria-labelledby="add-title">
         <div class="progress" aria-live="polite">
           <svg viewBox="0 0 80 80" aria-hidden="true">
             <circle class="track" cx="40" cy="40" r="34"/>
@@ -68,25 +69,25 @@
             <input type="text" id="task-title" name="title" placeholder="e.g. Read PHY 102 week 3 notes" maxlength="120" autocomplete="off">
             <span class="error-text" id="task-title-error" aria-live="polite"></span>
           </div>
+          <div class="field">
+            <label for="task-course">Course</label>
+            <select id="task-course" name="course">
+              <optgroup label="School of Computing">
+                <option value="CSC 106">CSC 106 - Intro to Web Technologies</option>
+                <option value="COS 102">COS 102 - Problem Solving</option>
+                <option value="COS 111">COS 111 - Technical Certification in Computing I</option>
+                <option value="MTH 102">MTH 102 - Elementary Mathematics II</option>
+                <option value="PHY 102">PHY 102 - General Physics II</option>
+                <option value="PHY 108">PHY 108 - General Physics Practical II</option>
+              </optgroup>
+              <optgroup label="General Studies">
+                <option value="GST 112">GST 112 - Nigerian Peoples and Culture</option>
+                <option value="GST 122">GST 122 - Communication Skills in English II</option>
+              </optgroup>
+              <option value="Other">Other</option>
+            </select>
+          </div>
           <div class="field-row">
-            <div class="field">
-              <label for="task-course">Course</label>
-              <select id="task-course" name="course">
-                <optgroup label="School of Computing">
-                  <option value="CSC 106">CSC 106 - Intro to Web Technologies</option>
-                  <option value="COS 102">COS 102 - Problem Solving</option>
-                  <option value="COS 111">COS 111 - Technical Certification in Computing I</option>
-                  <option value="MTH 102">MTH 102 - Elementary Mathematics II</option>
-                  <option value="PHY 102">PHY 102 - General Physics II</option>
-                  <option value="PHY 108">PHY 108 - General Physics Practical II</option>
-                </optgroup>
-                <optgroup label="General Studies">
-                  <option value="GST 112">GST 112 - Nigerian Peoples and Culture</option>
-                  <option value="GST 122">GST 122 - Communication Skills in English II</option>
-                </optgroup>
-                <option value="Other">Other</option>
-              </select>
-            </div>
             <div class="field">
               <label for="task-priority">Priority</label>
               <select id="task-priority" name="priority">
@@ -95,20 +96,19 @@
                 <option value="low">Low</option>
               </select>
             </div>
+            <div class="field">
+              <label for="task-due">Due date <span class="hint">(optional)</span></label>
+              <input type="date" id="task-due" name="due">
+            </div>
           </div>
-          <div class="field">
-            <label for="task-due">Due date</label>
-            <input type="date" id="task-due" name="due">
-            <span class="hint">Optional</span>
-          </div>
-          <button class="btn btn-primary btn-block" type="submit">
+          <button class="btn btn-gold btn-block" type="submit">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
             Add task
           </button>
         </form>
       </aside>
 
-      <section class="panel" aria-labelledby="list-title">
+      <section class="card" aria-labelledby="list-title">
         <div class="toolbar">
           <h2 id="list-title">My tasks</h2>
           <div class="filters" role="group" aria-label="Show tasks">
@@ -132,17 +132,34 @@
         </div>
       </section>
     </div>
+
+    <section class="section" aria-labelledby="demo-title">
+      <div class="card media reveal">
+        <div>
+          <p class="label">Demo</p>
+          <h2 id="demo-title">Watch how it works</h2>
+          <p>A short screen recording of the planner: adding a task, marking it done, filtering and deleting.</p>
+        </div>
+        <video controls preload="metadata" poster="images/planner-poster.jpg" width="1280" height="800">
+          <source src="media/planner-demo.webm" type="video/webm">
+          Your browser can't play this video. <a href="media/planner-demo.webm">Download the demo</a> instead.
+        </video>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-row">
-      <p>&copy; <span id="year">2026</span> Prince Caleb Effiom. COS 106 term project.</p>
-      <ul class="footer-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="planner.html">Planner</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <div class="container">
+      <div class="footer-row">
+        <p>&copy; <span id="year">2026</span> Prince Caleb Effiom. CSC 106 term project.</p>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="planner.html">Planner</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://github.com/Beladroid" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
     </div>
   </footer>
 </body>
